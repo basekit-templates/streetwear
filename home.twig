@@ -5,19 +5,19 @@
 <!-- Page Content -->
 <section class="page  page--home">
 
-    {% include "includes/hero.twig" %}
-
-    {% include "includes/row1.twig" %}
-
-    {% include "includes/row2.twig" %}
-
-    {% include "includes/row3.twig" %}
+    {% include "includes/hero.twig" %}}
 
     <!-- Zone Content -->
     <div id="main-scroll" class="main-content">
         <div class="container">
 
+            {% include "row1.twig" %}
 
+            {% include "row2.twig" %}
+
+            {% include "row3.twig" %}
+
+            {{zone('main')|raw}}
 
         </div>
     </div>
