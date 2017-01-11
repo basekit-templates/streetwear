@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<div class="bk-row  row  row__text--button  ">
+    <div class="bk-row__container  row__container">
+
+        <div class="bk-zone  row__column  row__column--full  align--middle-center">
+
+            {{widget('content', 'text-button', {
+                content: '<h1>Lorem ipsum dolor sit amet...</h1>'
+            })|raw}}
+
+        </div>
+
+        <div class="bk-zone  row__column  row__column--full  align--middle-center">
+
+        {{widget('button', 'button', {
+            'text': 'Documentation',
+            'align': 'widget-align-center',
+            'action': 'external',
+            'url': 'http://docs.basekit.com',
+            'target': '_blank'
+        })|raw}}
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
