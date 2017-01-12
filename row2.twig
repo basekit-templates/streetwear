@@ -1,19 +1,29 @@
 
 <div class="bk-row  row  row__text--button">
-    <div class="bk-row__container  row__container">
+    <div class="bk-row__container  row__container row--padding  text-button-row">
 
         <div class="bk-zone  row__column  row__column--full  align--middle-center">
 
-            {{widget('content', 'text-button', {
-                content: '<h1>Lorem ipsum dolor sit amet...</h1>'
-            })|raw}}
+            <div class="text-button-header">
 
-        </div>
+                {{widget('content', 'text-button', {
+                    content: '<h4>SALE NOW ON</h4>'
+                })|raw}}
+
+            </div>
+
+            <div class="text-button-headline">
+
+                {{widget('content', 'text-button', {
+                    content: '<h1>50% sale in-store and online now</h1>'
+                })|raw}}
+
+            </div>
 
         <div class="bk-zone  row__column  row__column--full  align--middle-center">
 
         {{widget('button', 'button', {
-            'text': 'Documentation',
+            'text': 'Click Here',
             'align': 'widget-align-center',
             'action': 'external',
             'url': 'http://docs.basekit.com',

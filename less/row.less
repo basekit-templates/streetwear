@@ -24,8 +24,8 @@
 
 
 // Spacing
-@row--padding: 30px 0;
-
+@row--padding: 5%;
+@row--padding-mobile: 8% 2%;
 
 
 
@@ -59,6 +59,7 @@
 .row,
 .row__container {
     height: @row--height-default;
+    .align-items(center);
 }
 
 
@@ -66,6 +67,9 @@
 .row__container {
     padding: @row--padding;
     width: @row--width-full;
+    @media @mobile {
+        padding: @row--padding-mobile;
+    }
 }
 
 
@@ -177,9 +181,9 @@
 //  Defaults - Variables
 // -------------------------------------
 
-@column--gutter: 15px;
+@column--gutter: 25px;
 @column--offset-value: 5%;
-
+@column--gutter-responsive: 15px;
 
 
 
@@ -198,6 +202,11 @@
     padding-right: @column--gutter;
     height: 100%;
     z-index: 2;
+
+    @media screen and (max-width: 1200px) {
+        padding-left: @column--gutter-reponsive;
+        padding-right: @column--gutter-responsive;
+    }
 }
 
 
@@ -237,6 +246,10 @@
     &--half {
         .flex-basis(50%);
 
+        @media @tablet {
+            .flex-basis(100%);
+        }
+
 
         &.row__column--offset {
             .flex-basis(50% + @column--offset-value);
@@ -248,6 +261,9 @@
     &--one-third {
         .flex-basis(33.33333333%);
 
+        @media screen and (max-width: 800px) {
+            .flex-basis(100%);
+        }
 
         &.row__column--offset {
             .flex-basis(33.33333333% + @column--offset-value);

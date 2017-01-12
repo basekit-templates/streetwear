@@ -1,27 +1,37 @@
 
 <div class="bk-row  row  row__image--text">
-    <div class="bk-row__container  row__container">
+    <div class="bk-row__container  row__container   row--padding">
 
         <div class="bk-zone  row__column  row__column--half  align--middle-center">
 
+        <div class="left-image">
+
             {{widget('image', 'image', {
-                'src': asset("images/feature-image.jpg"),
-                'title': 'The title text',
-                'description': 'The description text',
+                'src': asset("images/image-1.jpg"),
                 'alt': 'The alternate text',
                 'fileName': 'Logo Image',
                 'fileSize': 3,
                 'imageSize': '132 x 31',
-                'imageWidth': '132'
+                'imageWidth': '800'
             })|raw}}
+
+            </div>
 
         </div>
 
         <div class="bk-zone  row__column  row__column--half  align--middle-center">
 
-            {{widget('content', 'text-button', {
-                content: '<h3>Lorem ipsum dolor sit amet...</h3>'
+        <div class="right-content">
+
+            {{widget('content', 'title', {
+                content: '<h2>Spring/Summer 2017 Latest Trends</h2>'
             })|raw}}
+
+            {{widget('content', 'text', {
+                content: '<p>SAMIZDAT was created by Yang Li to express a new category that shows music as a lifestyle, through fashion informed by an obsession with music and visual language. Inspired by bootleg and sub-cultures, the on-going project offers a selected range of products including hoodies, T-shirts, totes, woven patches and other bizarre music and lifestyle merchandise.</p>'
+            })|raw}}
+
+        </div>
 
         </div>
 
