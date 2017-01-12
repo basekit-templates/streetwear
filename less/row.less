@@ -1,0 +1,286 @@
+
+// -------------------------------------
+//  Row - Structure
+// -------------------------------------
+
+
+
+
+//  Row Variables
+// -------------------------------------
+
+
+// Height
+@row--height-full: 100vh;
+@row--height-default: auto;
+@row--height-medium: 700px;
+@row--height-small: 400px;
+
+
+// Width
+@row--width-full: 100%;
+@row--width-wide: 80%;
+@row--width-contained: 1100px;
+
+
+// Spacing
+@row--padding: 30px 0;
+
+
+
+
+//  Grid (Flex)
+// -------------------------------------
+
+
+.row .row__container {
+    .box-sizing(border-box);
+    .flex-display;
+    .flex(0 1 auto);
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    margin: 0 auto;
+
+
+    // Reverses Row Content (Invert)
+    &--reverse {
+        .flex-direction(row-reverse);
+    }
+}
+
+
+
+
+//  Height & Width Defaults
+// -------------------------------------
+
+
+// Row / Container Height
+.row,
+.row__container {
+    height: @row--height-default;
+}
+
+
+// Container Width
+.row__container {
+    padding: @row--padding;
+    width: @row--width-full;
+}
+
+
+
+
+// ----------------------------------------------
+//  Columns - Vertical & Hortizontal Alignment
+// ----------------------------------------------
+
+
+
+
+//  Top Alignment
+// -------------------------------------
+
+
+.align--top {
+
+    // Top Left
+    &-left {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    // Top Center
+    &-center {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
+    // Top Right
+    &-right {
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+}
+
+
+
+
+//  Middle Alignment
+// -------------------------------------
+
+
+.align--middle {
+
+    // Middle Left
+    &-left {
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+
+    // Middle Center
+    &-center {
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    // Middle Right
+    &-right {
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
+
+
+
+//  Bottom Alignment
+// -------------------------------------
+
+
+.align--bottom {
+
+    // Bottom Left
+    &-left {
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+
+    // Bottom Center
+    &-center {
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+
+    // Bottom Right
+    &-right {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}
+
+
+
+
+// -------------------------------------
+//  Columns - Grid
+// -------------------------------------
+
+
+
+
+//  Defaults - Variables
+// -------------------------------------
+
+@column--gutter: 15px;
+@column--offset-value: 5%;
+
+
+
+
+//  Grid
+// -------------------------------------
+
+
+// Global Column Styling
+.row__column {
+    box-sizing: border-box;
+    .flex-display;
+    .flex-direction(column);
+    .flex(0 0 auto);
+    max-width: 100%;
+    padding-left: @column--gutter;
+    padding-right: @column--gutter;
+    height: 100%;
+    z-index: 2;
+}
+
+
+// Column Sizing
+.row__column {
+
+
+    // Full Width
+    &--full {
+        .flex-basis(100%);
+    }
+
+
+    // 75% Width
+    &--three-quarters {
+        .flex-basis(75%);
+
+
+        &.row__column--offset {
+            .flex-basis(75% + @column--offset-value);
+        }
+    }
+
+
+    // 66.66% Width
+    &--two-thirds {
+        .flex-basis(66.66666667%);
+
+
+        &.row__column--offset {
+            .flex-basis(66.66666667% + @column--offset-value);
+        }
+    }
+
+
+    // 50% Width
+    &--half {
+        .flex-basis(50%);
+
+
+        &.row__column--offset {
+            .flex-basis(50% + @column--offset-value);
+        }
+    }
+
+
+    // 33.33% Width Width
+    &--one-third {
+        .flex-basis(33.33333333%);
+
+
+        &.row__column--offset {
+            .flex-basis(33.33333333% + @column--offset-value);
+        }
+    }
+
+
+    // 25% Width
+    &--one-quarter {
+        .flex-basis(25%);
+
+
+        &.row__column--offset {
+            .flex-basis(25% + @column--offset-value);
+        }
+    }
+}
+
+
+// Column Offsets
+.row__column--offset {
+
+
+    &-left {
+        margin-left: -@column--offset-value;
+        padding-right: @column--offset-value;
+    }
+
+
+    &-right {
+        margin-right: -@column--offset-value;
+        padding-left: @column--offset-value;
+    }
+}
+
+
